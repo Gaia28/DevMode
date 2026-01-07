@@ -10,7 +10,7 @@ This script save time when initializing whit one command this programs:
 ## How to install?
 - clone:
 ``
-git clone 
+git clone https://github.com/Gaia28/WorkMode.git
 ``
 - Move the script to your binary directory:
 
