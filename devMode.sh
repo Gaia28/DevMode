@@ -27,7 +27,7 @@ start_web_enviroment() {
 if [ "$1" == "-s" ]; then
    sudo /opt/lampp/lampp stop > /dev/null 2>&1
    pkill firefox
-   pkill code
+   pkill -9 code
    echo "$FINISH_MESSAGE"
 
 else 
