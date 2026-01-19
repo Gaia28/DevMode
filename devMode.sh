@@ -19,7 +19,9 @@ FINISH_MESSAGE="
 "
 start_web_enviroment() {
    code > /dev/null 2>&1 &
-   firefox > /dev/null 2>&1 &
+   if  [ !ps aux | grep firefox]; then  
+      firefox > /dev/null 2>&1 &
+   fi
    sudo /opt/lampp/lampp start > /dev/null 2>&1 &
  
 }
