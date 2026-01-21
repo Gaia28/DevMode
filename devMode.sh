@@ -19,11 +19,10 @@ FINISH_MESSAGE="
 "
 start_web_enviroment() {
    code > /dev/null 2>&1 &
-   if  [ !ps aux | grep firefox]; then  
+   if ! ps aux | grep -v grep | grep -q "firefox"; then  
       firefox > /dev/null 2>&1 &
    fi
    sudo /opt/lampp/lampp start > /dev/null 2>&1 &
- 
 }
 
 if [ "$1" == "-s" ]; then
