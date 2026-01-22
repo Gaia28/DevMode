@@ -17,12 +17,18 @@ FINISH_MESSAGE="
       ||
       ||
 "
+verifyAppRunning(){
+  local app=$1
+  if ! ps aux | grep -v grep | grep -q "$app"; then
+    $app > /dev/null 2>&1 &
+  fi
+}
+
 start_web_enviroment() {
    code > /dev/null 2>&1 &
-   if ! ps aux | grep -v grep | grep -q "firefox"; then  
-      firefox > /dev/null 2>&1 &
-   fi
+   verifyAppRunning "firefox"
    sudo /opt/lampp/lampp start > /dev/null 2>&1 &
+ 
 }
 
 if [ "$1" == "-s" ]; then
