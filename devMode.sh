@@ -25,7 +25,7 @@ verifyAppRunning(){
 }
 
 start_web_enviroment() {
-   code > /dev/null 2>&1 &
+   verifyAppRunning "code"
    verifyAppRunning "firefox"
    sudo /opt/lampp/lampp start > /dev/null 2>&1 &
  
