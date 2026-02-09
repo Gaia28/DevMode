@@ -33,8 +33,11 @@ start_web_enviroment() {
 
 if [ "$1" == "-s" ]; then
    sudo /opt/lampp/lampp stop > /dev/null 2>&1
-   pkill firefox
    pkill -9 code
+   read -p "Do you want to finalize Firefox? (y/n): " response
+   if [ "$response" == "y" -o "$response" == "Y" ]; then
+	pkill firefox
+   fi
    echo "$FINISH_MESSAGE"
 
 else 
